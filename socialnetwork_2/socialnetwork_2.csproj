@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="..\.editorconfig" Link=".editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="4.4.0" />
     <PackageReference Include="MongoDB.Driver" Version="2.11.2" />
   </ItemGroup>

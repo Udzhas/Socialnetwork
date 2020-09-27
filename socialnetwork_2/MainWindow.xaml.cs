@@ -25,17 +25,8 @@ namespace socialnetwork_2
     {
         static MongoClient client = new MongoClient("mongodb://localhost:27017");
         static IMongoDatabase db = client.GetDatabase("users");
-        static IMongoCollection<User> collection = db.GetCollection<User>("socialnetwork");
+        static IMongoCollection<UserElements> collection = db.GetCollection<UserElements>("users");
 
-        public void VerifyUsersLogInData()
-        {
-            List<User> list = collection.AsQueryable().ToList<User>();
-            dgUser.ItemsSource = list;
-            User user = (User)dgUser.Items.GetItemAt(0);
-            //List<User> list = collection.AsQueryable().ToList<User>();
-
-            
-        }
         public MainWindow()
         {
             InitializeComponent();
@@ -59,26 +50,20 @@ namespace socialnetwork_2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<User> list = collection.AsQueryable().ToList<User>();
+            List<UserElements> list = collection.AsQueryable().ToList<UserElements>();
             dgUser.ItemsSource = list;
-            User user = (User)dgUser.Items.GetItemAt(0);
+            UserElements user = (UserElements)dgUser.Items.GetItemAt(0);
             if(tbxUserName.Text == user.userName && tbxPassword.Text == user.password)
             {
                 GeneralWindow objGeneralWindow = new GeneralWindow();
                 this.Visibility = Visibility.Hidden;
                 objGeneralWindow.Show();
             }
-            if(tbxUserName.Text == user.userName && tbxPassword.Text != user.password)
+            if(tbxUserName.Text != user.userName || tbxPassword.Text != user.password)
             {
-                MessageBox.Show("Wrong password! Please try again.");
+                MessageBox.Show("Wrong Username or password! Please try again.");
             }
-        }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            RegisterWindow objRegisterWindow = new RegisterWindow();
-            this.Visibility = Visibility.Hidden;
-            objRegisterWindow.Show();
         }
     }
 }

@@ -1,0 +1,30 @@
+﻿<Window x:Class="socialnetwork_2.MyPosts"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:socialnetwork_2"
+        mc:Ignorable="d"
+        Title="MyPosts" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Content="My Posts" Margin="0,0,0,0"/>
+        <DataGrid Grid.Column="0" x:Name="dgMyPosts" Margin="0,30,0,0"/>
+
+
+        <Button Grid.Column="1" x:Name="btnCreatePost" Content="Create post" Margin="10,367,304,43"/>
+        <Button Grid.Column="1" x:Name="btnUpdatePost" Content="Update post" Margin="141,367,165,43"/>
+        <Button Grid.Column="1" x:Name="btnDeletePost" Content="Delete post" Margin="280,367,26,43"/>
+        <Label Content="Post id" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"/>
+        <Label Content="Post name" Grid.Column="1" HorizontalAlignment="Left" Margin="20,81,0,0" VerticalAlignment="Top"/>
+        <Label Content="Post content" Grid.Column="1" HorizontalAlignment="Left" Margin="20,132,0,0" VerticalAlignment="Top"/>
+        <Label Content="Likes" Grid.Column="1" HorizontalAlignment="Left" Margin="20,232,0,0" VerticalAlignment="Top"/>
+        <Label Content="Comments" Grid.Column="1" HorizontalAlignment="Left" Margin="20,289,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date" Grid.Column="1" HorizontalAlignment="Left" Margin="20,191,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

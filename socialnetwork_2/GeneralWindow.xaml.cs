@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -22,9 +23,18 @@ namespace socialnetwork_2
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ShowFriends_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Window1 objShowFriends = new Window1();
+            this.Visibility = Visibility.Hidden;
+            objShowFriends.Show();
+        }
+
+        private void ShowPosts_Click(object sender, RoutedEventArgs e)
+        {
+            ShowPosts objShowPosts = new ShowPosts();
+            this.Visibility = Visibility.Hidden;
+            objShowPosts.Show();
         }
     }
 }

@@ -13,18 +13,13 @@ using System.Windows.Shapes;
 namespace socialnetwork_2
 {
     /// <summary>
-    /// Interaction logic for RegisterWindow.xaml
+    /// Interaction logic for MyPosts.xaml
     /// </summary>
-    public partial class RegisterWindow : Window
+    public partial class MyPosts : Window
     {
-        public RegisterWindow()
+        public MyPosts()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }
