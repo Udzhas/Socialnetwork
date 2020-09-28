@@ -36,5 +36,12 @@ namespace socialnetwork_2
             this.Visibility = Visibility.Hidden;
             objShowPosts.Show();
         }
+
+        private void MyPosts_Click(object sender, RoutedEventArgs e)
+        {
+            MyPosts objMyPosts = new MyPosts();
+            this.Visibility = Visibility.Hidden;
+            objMyPosts.Show();
+        }
     }
 }

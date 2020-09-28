@@ -57,6 +57,7 @@ namespace socialnetwork_2
             List<PostElements> list = collection_posts.AsQueryable().ToList<PostElements>();
             dgPosts.ItemsSource = list;
             PostElements post = (PostElements)dgPosts.Items.GetItemAt(0);
+            tbxPostId.Text = post.Id.ToString();
             tbxPostName.Text = post.name;
             tbxPostContent.Text = post.content;
             tbxPostdate.Text = post.date.ToString();
@@ -67,7 +68,7 @@ namespace socialnetwork_2
             }
             tbxPostlikes.Text = post.likes.ToString();
             tbxPostUser.Text = post.user_id;
-      
+            
 
         }
 
@@ -80,22 +81,23 @@ namespace socialnetwork_2
 
         private void btnLeaveComment_Click(object sender, RoutedEventArgs e)
         {
-            PostElements post = new PostElements(tbxPostName.Text, tbxPostContent.Text, Convert.ToDateTime(tbxPostdate), Int32.Parse(tbxPostlikes.Text), tbxPostComment.Text.Split(' ').ToList(), tbxPostUser.Text);
-            //post.comments.Append(" " + tbxPostLeaveComment.Text);
-            tbxPostComment.AppendText(" " + tbxPostLeaveComment.Text);
+            var leaveComment = Builders<PostElements>.Update.Set("comments", tbxPostComment.Text.Split(' ').ToList().Append(tbxPostLeaveComment.Text));
+            collection_posts.UpdateOne(post => post.Id == ObjectId.Parse(tbxPostId.Text), leaveComment);
+            ReadAllPosts();
         }
 
         private void btnLike_Click(object sender, RoutedEventArgs e)
         {
-            PostElements post = new PostElements(tbxPostName.Text,tbxPostContent.Text,Convert.ToDateTime(tbxPostdate), Int32.Parse(tbxPostlikes.Text),tbxPostComment.Text.Split(' ').ToList(), tbxPostUser.Text);
-            post.likes += 1;
-            //tbxPostlikes.Text = (Convert.ToInt32(tbxPostlikes) + 1).ToString();
+            var addLike = Builders<PostElements>.Update.Set("likes", tbxPostlikes.Text = (Convert.ToInt32(tbxPostlikes.Text) + 1).ToString());
+            collection_posts.UpdateOne(post => post.Id == ObjectId.Parse(tbxPostId.Text), addLike);
+            ReadAllPosts();
             
         }
 
         private void dgPosts_MouseUp(object sender, MouseButtonEventArgs e)
         {
             PostElements post = (PostElements)dgPosts.SelectedItem;
+            tbxPostId.Text = post.Id.ToString();
             tbxPostName.Text = post.name;
             tbxPostContent.Text = post.content;
             tbxPostdate.Text = post.date.ToString();

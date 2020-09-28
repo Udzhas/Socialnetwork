@@ -8,7 +8,6 @@ namespace socialnetwork_2
 {
     class PostElements
     {
-
         [BsonId]
         public ObjectId Id {get;set;}
         [BsonElement("name")]
@@ -20,11 +19,11 @@ namespace socialnetwork_2
         [BsonElement("likes")]
         public int likes { get; set; }
         [BsonElement("comments")]
-        public List<string> comments { get; set; }
+        public List<String> comments { get; set; }
         [BsonElement("user_id")]
         public String user_id { get; set; }
 
-        public PostElements(string name, string content, DateTime date, int likes, List<string> comments, string user_id)
+        public PostElements(string name, string content, DateTime date, int likes, List<String> comments, string user_id)
         {
             this.name = name;
             this.content = content;
@@ -34,6 +33,5 @@ namespace socialnetwork_2
             this.comments.AddRange(comments);
             this.user_id = user_id;
         }
-
     }
 }

@@ -18,6 +18,6 @@
 
         <Label Grid.Column="1" x:Name="Posts" Content="Posts" HorizontalAlignment="Center" VerticalAlignment="Top" Height="25"/>
         <Button Grid.Column="1" x:Name="ShowPosts" Content="Show Posts" HorizontalAlignment="Center" Margin="0,50,0,0" VerticalAlignment="Top" Width="106" Click="ShowPosts_Click"/>
-        <Button Grid.Column="1" x:Name="MyPosts" Content="My Posts" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="106"/>
+        <Button Grid.Column="1" x:Name="MyPosts" Content="My Posts" HorizontalAlignment="Center" Margin="0,100,0,0" VerticalAlignment="Top" Width="106" Click="MyPosts_Click"/>
     </Grid>
 </Window>
