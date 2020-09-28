@@ -13,15 +13,25 @@
 
         </Grid.ColumnDefinitions>
         <Label Content="Posts" Margin="0,0,0,0"/>
-        <DataGrid Grid.Column="0" x:Name="dgPosts" Margin="0,30,0,0"/>
-        <Button Grid.Column="1" x:Name="BackToMainPage" Content="Back to main page" HorizontalAlignment="Left" Margin="100,404,0,0" VerticalAlignment="Top" Height="25" Width="117" Click="BackToMainPage_Click"/>
+        <DataGrid IsReadOnly="True" Grid.Column="0" x:Name="dgPosts" Margin="0,30,0,0"  MouseUp="dgPosts_MouseUp" CanUserSortColumns="True"/>
+        <Button Grid.Column="1" x:Name="BackToMainPage" Content="Back to main page" HorizontalAlignment="Center" Margin="0,361,0,0" VerticalAlignment="Top" Height="25" Width="116" Click="BackToMainPage_Click"/>
         <Label Content="Post name" Grid.Column="1" HorizontalAlignment="Left" Margin="20,12,0,0" VerticalAlignment="Top"/>
         <Label Content="Post content" Grid.Column="1" HorizontalAlignment="Left" Margin="20,65,0,0" VerticalAlignment="Top"/>
         <Label Content="Post comments" Grid.Column="1" HorizontalAlignment="Left" Margin="20,178,0,0" VerticalAlignment="Top"/>
         <Label Content="Likes" Grid.Column="1" HorizontalAlignment="Left" Margin="20,219,0,0" VerticalAlignment="Top"/>
-        <Button Content="Leave comment" Grid.Column="1" HorizontalAlignment="Left" Margin="20,273,0,0" VerticalAlignment="Top"/>
-        <Button Content="Like" Grid.Column="1" HorizontalAlignment="Left" Margin="20,325,0,0" VerticalAlignment="Top" Width="38"/>
+        <Button x:Name="btnLeaveComment" Click="btnLeaveComment_Click" Content="Leave comment" Grid.Column="1" HorizontalAlignment="Left" Margin="20,317,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnLike" Click="btnLike_Click" Content="Like" Grid.Column="1" HorizontalAlignment="Left" Margin="17,366,0,0" VerticalAlignment="Top" Width="38"/>
         <Label Content="Date" Grid.Column="1" HorizontalAlignment="Left" Margin="20,125,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxPostName" Grid.Column="1" HorizontalAlignment="Left" Margin="181,16,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <TextBox x:Name="tbxPostContent" Grid.Column="1" HorizontalAlignment="Left" Margin="181,69,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <TextBox x:Name="tbxPostLeaveComment" Grid.Column="1" HorizontalAlignment="Left" Margin="181,317,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <TextBox x:Name="tbxPostdate" Grid.Column="1" HorizontalAlignment="Left" Margin="181,129,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <TextBox x:Name="tbxPostComment" Grid.Column="1" HorizontalAlignment="Left" Margin="181,182,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <TextBox x:Name="tbxPostlikes" Grid.Column="1" HorizontalAlignment="Left" Margin="181,223,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+        <Label Content="User`s post" Grid.Column="1" HorizontalAlignment="Left" Margin="20,265,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbxPostUser" Grid.Column="1" HorizontalAlignment="Left" Margin="181,269,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="209"/>
+
+
 
     </Grid>
 </Window>

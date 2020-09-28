@@ -9,7 +9,7 @@ namespace socialnetwork_2
     class UserElements
     {
         [BsonId]
-        public ObjectId Id { get; set; }
+        public String Id { get; set; }
         [BsonElement("username")]
         public String userName { get; set; }
         [BsonElement("password")]
@@ -23,8 +23,9 @@ namespace socialnetwork_2
         public List<string> interests { get; set; }
 
 
-        public UserElements(string userName, string password, string first_name, string last_name, List<string> interests)
+        public UserElements(string Id, string userName, string password, string first_name, string last_name, List<string> interests)
         {
+            this.Id = Id;
             this.userName = userName;
             this.password = password;
             this.first_name = first_name;

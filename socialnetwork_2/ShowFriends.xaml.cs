@@ -34,11 +34,11 @@ namespace socialnetwork_2
             List<UserElements> list = collection.AsQueryable().ToList<UserElements>();
             dgUsers.ItemsSource = list;
             UserElements user = (UserElements)dgUsers.Items.GetItemAt(0);
-            tbxId.Text = user.Id.ToString();
-            tbxUsername.Text = user.userName.ToString();
-            tbxPassword.Text = user.password.ToString();
-            tbxFirstName.Text = user.first_name.ToString();
-            tbxLastName.Text = user.last_name.ToString();
+            tbxId.Text = user.Id;
+            tbxUsername.Text = user.userName;
+            tbxPassword.Text = user.password;
+            tbxFirstName.Text = user.first_name;
+            tbxLastName.Text = user.last_name;
             tbxInterests.Clear();
             foreach(var interest in user.interests)
             {
@@ -50,11 +50,11 @@ namespace socialnetwork_2
         private void dgUsers_MouseUp(object sender, MouseButtonEventArgs e)
         {
             UserElements user = (UserElements)dgUsers.SelectedItem;
-            tbxId.Text = user.Id.ToString();
-            tbxUsername.Text = user.userName.ToString();
-            tbxPassword.Text = user.password.ToString();
-            tbxFirstName.Text = user.first_name.ToString();
-            tbxLastName.Text = user.last_name.ToString();
+            tbxId.Text = user.Id;
+            tbxUsername.Text = user.userName;
+            tbxPassword.Text = user.password;
+            tbxFirstName.Text = user.first_name;
+            tbxLastName.Text = user.last_name;
             tbxInterests.Clear();
             foreach (var interest in user.interests)
             {
@@ -64,27 +64,35 @@ namespace socialnetwork_2
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            UserElements user = new UserElements(tbxUsername.Text, tbxPassword.Text, tbxFirstName.Text, tbxLastName.Text, tbxInterests.Text.Split(' ').ToList());
+            UserElements user = new UserElements(tbxId.Text, tbxUsername.Text, tbxPassword.Text, tbxFirstName.Text, tbxLastName.Text, tbxInterests.Text.Split(' ').ToList());
             collection.InsertOne(user);
             ReadAllDocuments();
         }
 
         private void btnUpdate_Click(object sender, RoutedEventArgs e)
         {
-            var updateDefinition = Builders<UserElements>.Update.Set("username", tbxUsername.Text)
+            var updateDefinition = Builders<UserElements>.Update.Set("Id", tbxId.Text)
+                                                                .Set("username", tbxUsername.Text)
                                                                 .Set("password", tbxPassword.Text)
                                                                 .Set("first_name", tbxFirstName.Text)
                                                                 .Set("last_name", tbxLastName.Text)
                                                                 .Set("interests", tbxInterests.Text.Split(' ').ToList());
                                                                 
-            collection.UpdateOne(user => user.Id == ObjectId.Parse(tbxId.Text), updateDefinition);
+            collection.UpdateOne(user => user.Id.ToString() == tbxId.Text, updateDefinition);
             ReadAllDocuments();
         }
 
         private void btnDelete_Click(object sender, RoutedEventArgs e)
         {
-            collection.DeleteOne(user => user.Id == ObjectId.Parse(tbxId.Text));
+            collection.DeleteOne(user => user.Id.ToString() == tbxId.Text);
             ReadAllDocuments();
+        }
+
+        private void BackToMainPage_Click(object sender, RoutedEventArgs e)
+        {
+            GeneralWindow objGeneralWindow = new GeneralWindow();
+            this.Visibility = Visibility.Hidden;
+            objGeneralWindow.Show();
         }
     }
 }

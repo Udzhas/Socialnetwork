@@ -34,5 +34,6 @@ namespace socialnetwork_2
             this.comments.AddRange(comments);
             this.user_id = user_id;
         }
+
     }
 }
