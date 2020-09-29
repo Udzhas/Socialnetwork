@@ -33,6 +33,10 @@ namespace socialnetwork_2
             this.interests = new List<string>();
             this.interests.AddRange(interests);
         }
+         public UserElements()
+        {
+
+        }
 
     }
 }

@@ -13,25 +13,26 @@
 
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Content="My Posts" Margin="0,0,0,0"/>
-        <DataGrid Grid.Column="0" x:Name="dgMyPosts" Margin="0,30,0,0" MouseUp="dgMyPosts_MouseUp"/>
+        <DataGrid Grid.Column="0" x:Name="dgMyPosts" Margin="10,30,0,0" MouseUp="dgMyPosts_MouseUp"/>
 
 
-        <Button Grid.Column="1" x:Name="btnCreatePost" Content="Create post" Margin="10,367,304,43"/>
-        <Button Grid.Column="1" x:Name="btnUpdatePost" Content="Update post" Margin="141,367,165,43"/>
-        <Button Grid.Column="1" x:Name="btnDeletePost" Content="Delete post" Margin="280,367,26,43"/>
+        <Button Grid.Column="1" Click="CreatePost_CLick" x:Name="btnCreatePost" Content="Create post" Margin="10,367,304,43"/>
+        <Button Grid.Column="1" Click="UpdatePost_Click" x:Name="btnUpdatePost" Content="Update post" Margin="141,367,165,43"/>
+        <Button Grid.Column="1" Click="DeletePost_Click" x:Name="btnDeletePost" Content="Delete post" Margin="280,367,26,43"/>
         <Label Content="Post id" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"/>
         <Label Content="Post name" Grid.Column="1" HorizontalAlignment="Left" Margin="20,81,0,0" VerticalAlignment="Top"/>
         <Label Content="Post content" Grid.Column="1" HorizontalAlignment="Left" Margin="20,132,0,0" VerticalAlignment="Top"/>
-        <Label Content="Likes" Grid.Column="1" HorizontalAlignment="Left" Margin="20,232,0,0" VerticalAlignment="Top"/>
+        <Label Content="Likes" Grid.Column="1" HorizontalAlignment="Left" Margin="20,263,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.667,1.712"/>
         <Label Content="Comments" Grid.Column="1" HorizontalAlignment="Left" Margin="20,289,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date" Grid.Column="1" HorizontalAlignment="Left" Margin="20,191,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date" Grid.Column="1" HorizontalAlignment="Left" Margin="20,177,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.514,-0.623"/>
         <TextBox x:Name="tbxMyPostId" Grid.Column="1" HorizontalAlignment="Left" Margin="188,34,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
         <TextBox x:Name="tbxMyPostName" Grid.Column="1" HorizontalAlignment="Left" Margin="188,85,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
         <TextBox x:Name="tbxMyPostContent" Grid.Column="1" HorizontalAlignment="Left" Margin="188,136,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
-        <TextBox x:Name="tbxMyPostDate" Grid.Column="1" HorizontalAlignment="Left" Margin="188,195,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
-        <TextBox x:Name="tbxMyPostLikes" Grid.Column="1" HorizontalAlignment="Left" Margin="188,236,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="tbxMyPostDate" Grid.Column="1" HorizontalAlignment="Left" Margin="188,181,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
+        <TextBox x:Name="tbxMyPostLikes" Grid.Column="1" HorizontalAlignment="Left" Margin="188,267,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
         <TextBox x:Name="tbxMyPostComments" Grid.Column="1" HorizontalAlignment="Left" Margin="188,297,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
         <Button x:Name="BackToMainPage" Click="BackToMainPageClick" Content="Back to main page"  Grid.Column="1" HorizontalAlignment="Left" Margin="146,401,0,0" VerticalAlignment="Top" Height="38" Width="125"/>
-
+        <Label Content="User id" Grid.Column="1" HorizontalAlignment="Left" Margin="20,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.514,-0.623"/>
+        <TextBox x:Name="tbxMyPostUserId" Grid.Column="1" HorizontalAlignment="Left" Margin="188,226,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="202"/>
     </Grid>
 </Window>

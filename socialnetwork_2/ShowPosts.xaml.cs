@@ -24,7 +24,8 @@ namespace socialnetwork_2
         static MongoClient client = new MongoClient("mongodb://localhost:27017");
         static IMongoDatabase db = client.GetDatabase("users");
         static IMongoCollection<PostElements> collection_posts = db.GetCollection<PostElements>("posts");
-    
+        private string loggedUserId;
+
         public ShowPosts()
         {
             InitializeComponent();
@@ -68,28 +69,29 @@ namespace socialnetwork_2
             }
             tbxPostlikes.Text = post.likes.ToString();
             tbxPostUser.Text = post.user_id;
-            
 
+            tbxPostLeaveComment.Clear();
         }
 
         private void BackToMainPage_Click(object sender, RoutedEventArgs e)
         {
-            GeneralWindow objGeneralWindow = new GeneralWindow();
+            GeneralWindow objGeneralWindow = new GeneralWindow(loggedUserId);
             this.Visibility = Visibility.Hidden;
             objGeneralWindow.Show();
         }
 
         private void btnLeaveComment_Click(object sender, RoutedEventArgs e)
         {
+            
             var leaveComment = Builders<PostElements>.Update.Set("comments", tbxPostComment.Text.Split(' ').ToList().Append(tbxPostLeaveComment.Text));
-            collection_posts.UpdateOne(post => post.Id == ObjectId.Parse(tbxPostId.Text), leaveComment);
+            collection_posts.UpdateOne(post => post.Id == tbxPostId.Text, leaveComment);
             ReadAllPosts();
         }
 
         private void btnLike_Click(object sender, RoutedEventArgs e)
         {
             var addLike = Builders<PostElements>.Update.Set("likes", tbxPostlikes.Text = (Convert.ToInt32(tbxPostlikes.Text) + 1).ToString());
-            collection_posts.UpdateOne(post => post.Id == ObjectId.Parse(tbxPostId.Text), addLike);
+            collection_posts.UpdateOne(post => post.Id == tbxPostId.Text, addLike);
             ReadAllPosts();
             
         }
@@ -108,7 +110,9 @@ namespace socialnetwork_2
             }
             tbxPostlikes.Text = post.likes.ToString();
             tbxPostUser.Text = post.user_id;
+            tbxPostLeaveComment.Clear();
             SortDataGrid(dgPosts, 3, ListSortDirection.Descending);
+
         }
     }
 }

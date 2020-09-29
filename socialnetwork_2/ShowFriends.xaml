@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:socialnetwork_2"
         mc:Ignorable="d"
-        Title="Window1" Height="450" Width="800">
+        Title="Window1" Height="550" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -13,7 +13,7 @@
 
         </Grid.ColumnDefinitions>
         <Label Grid.Column="0" Content="Users" HorizontalAlignment="Center" VerticalAlignment="Top"/>
-        <DataGrid x:Name="dgUsers" Margin="0,30,0,0" MouseUp="dgUsers_MouseUp"/>
+        <DataGrid x:Name="dgUsers" Margin="0,30,0,100" MouseUp="dgUsers_MouseUp"/>
         <Label x:Name="Username" Content="Username" Grid.Column="1" HorizontalAlignment="Left" Margin="20,80,0,0" VerticalAlignment="Top"/>
         <Label x:Name="Username_Copy" Content="Password" Grid.Column="1" HorizontalAlignment="Left" Margin="20,130,0,0" VerticalAlignment="Top" Width="67"/>
         <Label x:Name="Username_Copy1" Content="First Name" Grid.Column="1" HorizontalAlignment="Left" Margin="20,180,0,0" VerticalAlignment="Top"/>
@@ -29,6 +29,6 @@
         <TextBox x:Name="tbxInterests" Grid.Column="1" HorizontalAlignment="Left" Margin="177,284,0,0" Text="TextBox" VerticalAlignment="Top" Width="213" RenderTransformOrigin="0.484,3.213"/>
         <Label x:Name="Username_Copy4" Content="Id" Grid.Column="1" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbxId" Grid.Column="1" HorizontalAlignment="Left" Margin="177,34,0,0" Text="TextBox" VerticalAlignment="Top" Width="213"/>
-        <Button Grid.Column="1" Click="BackToMainPage_Click" Content="Back to main page" x:Name="BackToMainWindow" Margin="48,401,52,10"/>
+        <Button Grid.Column="1" Click="BackToMainPage_Click" Content="Back to main page" x:Name="BackToMainWindow" Margin="48,401,52,100"/>
     </Grid>
 </Window>

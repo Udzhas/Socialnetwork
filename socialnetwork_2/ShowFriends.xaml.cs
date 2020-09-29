@@ -24,6 +24,8 @@ namespace socialnetwork_2
         static MongoClient client = new MongoClient("mongodb://localhost:27017");
         static IMongoDatabase db = client.GetDatabase("users");
         static IMongoCollection<UserElements> collection = db.GetCollection<UserElements>("users");
+        private string loggedUserId;
+
         public Window1()
         {
             InitializeComponent();
@@ -91,7 +93,7 @@ namespace socialnetwork_2
 
         private void BackToMainPage_Click(object sender, RoutedEventArgs e)
         {
-            GeneralWindow objGeneralWindow = new GeneralWindow();
+            GeneralWindow objGeneralWindow = new GeneralWindow(loggedUserId);
             this.Visibility = Visibility.Hidden;
             objGeneralWindow.Show();
         }

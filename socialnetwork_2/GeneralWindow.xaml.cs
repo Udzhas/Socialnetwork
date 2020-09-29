@@ -18,11 +18,13 @@ namespace socialnetwork_2
     /// </summary>
     public partial class GeneralWindow : Window
     {
-        public GeneralWindow()
+        public string loggedUserId;
+
+        public GeneralWindow(string loggedUserId)
         {
+            this.loggedUserId = loggedUserId;
             InitializeComponent();
         }
-
         private void ShowFriends_Click(object sender, RoutedEventArgs e)
         {
             Window1 objShowFriends = new Window1();
@@ -39,7 +41,7 @@ namespace socialnetwork_2
 
         private void MyPosts_Click(object sender, RoutedEventArgs e)
         {
-            MyPosts objMyPosts = new MyPosts();
+            MyPosts objMyPosts = new MyPosts(loggedUserId);
             this.Visibility = Visibility.Hidden;
             objMyPosts.Show();
         }
