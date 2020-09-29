@@ -1,0 +1,110 @@
+db.users.insert([{
+	_id: "user1",
+	username: "user1",
+	password: "pass1",
+	first_name: "Josh",
+	last_name: "McCal",
+	interests: [
+	"swimming",
+	"stamping",
+	"dbs"]
+},
+{
+	_id: "user2",
+	username: "user2",
+	password: "pass2",
+	first_name: "Neil",
+	last_name: "Drake",
+	interests: [
+	"swimmind",
+	"coding",
+	"dbs"]
+},
+{
+	_id: "user3",
+	username: "user3",
+	password: "pass3",
+	first_name: "Simon",
+	last_name: "Pitt",
+	interests: [
+	"boxing",
+	"cars",
+	"games"]	
+},
+{
+	_id: "user4",
+	username: "user4",
+	password: "pass4",
+	first_name: "Cody",
+	last_name: "Briant",
+	interests: [
+	"planes",
+	"animals",
+	"books"]
+},
+{
+	_id: "user5",
+	username: "user5",
+	password: "pass5",
+	first_name: "John",
+	last_name: "Black",
+	interests: [
+	"films",
+	"series",
+	"comics"]
+},
+{
+	_id: "user6",
+	username: "user6",
+	password: "pass6",
+	first_name: "Stan",
+	last_name: "Smith",
+	interests: [
+	"shoes",
+	"tennis",
+	"bikes"]
+},
+{
+	_id: "user7",
+	username: "user7",
+	password: "pass7",
+	first_name: "Douglas",
+	last_name: "Miller",
+	interests: [
+	"wrestling",
+	"concerts",
+	"rock"]
+},
+{
+	_id: "user8",
+	username: "user8",
+	password: "pass8",
+	first_name: "Stanley",
+	last_name: "Siemens",
+	interests: [
+	"gym",
+	"java",
+	"automation"]
+},
+{
+	_id: "user9",
+	username: "user9",
+	password: "pass9",
+	first_name: "Antony",
+	last_name: "Joshua",
+	interests: [
+	"fighting",
+	"cars",
+	"clubs"]
+},
+{
+	_id: "user10",
+	username: "user10",
+	password: "pass10",
+	first_name: "Bueno",
+	last_name: "Diaz",
+	interests: [
+	"taco",
+	"books",
+	"animals"]
+}]);
