@@ -1,0 +1,285 @@
+db.posts.insert([{
+	_id: "post1",
+	name: "post1",
+	content: "content fo post 1",
+	date: ISODate("2019-01-01"),
+	likes: 10,
+	user_id: "user1",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post2",
+	name: "post2",
+	content: "content fo post 2",
+	date: ISODate("2019-01-02"),
+	likes: 11,
+	user_id: "user1",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post3",
+	name: "post3",
+	content: "content fo post 3",
+	date: ISODate("2019-01-03"),
+	likes: 12,
+	user_id: "user2",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	 
+},
+{
+	_id: "post4",
+	name: "post4",
+	content: "content fo post 4",
+	date: ISODate("2019-01-04"),
+	likes: 13,
+	user_id: "user2",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post5",
+	name: "post5",
+	content: "content fo post 5",
+	date: ISODate("2019-01-05"),
+	likes: 15,
+	user_id: "user3",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post6",
+	name: "post6",
+	content: "content fo post 6",
+	date: ISODate("2019-01-06"),
+	likes: 16,
+	user_id: "user3",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post7",
+	name: "post7",
+	content: "content fo post 7",
+	date: ISODate("2019-01-07"),
+	likes: 17,
+	user_id: "user4",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post8",
+	name: "post8",
+	content: "content fo post 8",
+	date: ISODate("2019-01-08"),
+	likes: 18,
+	user_id: "user4",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post9",
+	name: "post9",
+	content: "content fo post 9",
+	date: ISODate("2019-01-09"),
+	likes: 19,
+	user_id: "user14",
+	comments: [
+	"1",
+	"2",
+	"3"]
+	
+},
+{
+	_id: "post10",
+	name: "post10",
+	content: "content fo post 10",
+	date: ISODate("2019-01-10"),
+	likes: 20,
+	user_id: "user5",
+	comments: [
+	"1",
+	"2",
+	"3"]
+},
+{
+	_id: "post11",
+	name: "post11",
+	content: "content fo post 11",
+	date: ISODate("2019-01-11"),
+	likes: 1011,
+	user_id: "user5",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post12",
+	name: "post12",
+	content: "content fo post 12",
+	date: ISODate("2019-01-12"),
+	likes: 11,
+	user_id: "user6",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post13",
+	name: "post13",
+	content: "content fo post 13",
+	date: ISODate("2019-01-13"),
+	likes: 10,
+	user_id: "user6",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post14",
+	name: "post14",
+	content: "content fo post 14",
+	date: ISODate("2019-01-14"),
+	likes: 10,
+	user_id: "user7",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post15",
+	name: "post15",
+	content: "content fo post 15",
+	date: ISODate("2019-01-15"),
+	likes: 10,
+	user_id: "user7",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post16",
+	name: "post16",
+	content: "content fo post 16",
+	date: ISODate("2019-01-16"),
+	likes: 10,
+	user_id: "user8",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post17",
+	name: "post17",
+	content: "content fo post 17",
+	date: ISODate("2019-01-17"),
+	likes: 10,
+	user_id: "user8",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post18",
+	name: "post18",
+	content: "content fo post 18",
+	date: ISODate("2019-01-18"),
+	likes: 10,
+	user_id: "user9",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post19",
+	name: "post19",
+	content: "content fo post 19",
+	date: ISODate("2019-01-25"),
+	likes: 10,
+	user_id: "user9",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post20",
+	name: "post20",
+	content: "content fo post 20",
+	date: ISODate("2019-02-02"),
+	likes: 10,
+	user_id: "user10",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post21",
+	name: "post21",
+	content: "content fo post 21",
+	date: ISODate("2019-02-21"),
+	likes: 10,
+	user_id: "user10",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+},
+{
+	_id: "post22",
+	name: "post22",
+	content: "content fo post 22",
+	date: ISODate("2019-05-11"),
+	likes: 10,
+	user_id: "user10",
+	comments: [
+	"1",
+	"2",
+	"3"]
+
+}]);

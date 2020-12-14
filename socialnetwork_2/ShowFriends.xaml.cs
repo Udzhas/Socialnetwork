@@ -97,5 +97,10 @@ namespace socialnetwork_2
             this.Visibility = Visibility.Hidden;
             objGeneralWindow.Show();
         }
+
+        private void dgUsers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
