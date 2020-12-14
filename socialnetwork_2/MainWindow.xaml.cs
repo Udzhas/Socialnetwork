@@ -26,12 +26,7 @@ namespace socialnetwork_2
     
     public partial class MainWindow : Window
     {
-
-        public string loggedUserId;
-        static MongoClient client = new MongoClient("mongodb://localhost:27017");
-        static IMongoDatabase db = client.GetDatabase("users");
-        static IMongoCollection<UserElements> collection = db.GetCollection<UserElements>("users");
-
+        UserServices services;
         public MainWindow()
         {
             InitializeComponent();
@@ -55,18 +50,19 @@ namespace socialnetwork_2
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            UserElements user = new UserElements();
-            List<UserElements> userData = collection.AsQueryable().Where(e => e.userName == tbxUserName.Text).ToList();
-            if(userData[0].password == tbxPassword.Text)
+            if (services.CheckPassword(tbxUserName.Text, tbxPassword.ToString()))
             {
-                loggedUserId = userData[0].Id;
-                GeneralWindow objGeneralWindow = new GeneralWindow(loggedUserId);
-                this.Visibility = Visibility.Hidden;
-                objGeneralWindow.Show();
+                services.NickNameWrite(tbxUserName.Text);
+                GeneralWindow general = new GeneralWindow()
+                {
+                    WindowStartupLocation = WindowStartupLocation.CenterScreen
+                };
+                general.ShowDialog();
+                this.Close();
             }
             else
             {
-                MessageBox.Show("Wrong user name or password! Please try again.");
+                MessageBox.Show("Error!");
             }
         }
     }

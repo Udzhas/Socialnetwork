@@ -20,11 +20,10 @@ namespace socialnetwork_2
     {
         public string loggedUserId;
 
-        public GeneralWindow(string loggedUserId)
+        public GeneralWindow()
         {
-            this.loggedUserId = loggedUserId;
-            InitializeComponent();
         }
+
         private void ShowFriends_Click(object sender, RoutedEventArgs e)
         {
             Window1 objShowFriends = new Window1();
